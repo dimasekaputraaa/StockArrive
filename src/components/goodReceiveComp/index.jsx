@@ -43,7 +43,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const GoodReceive = () => {
+const GoodReceiveComp = () => {
   const [isEnabled, setEnabled] = useState(false);
   const [caseIdValue, setCaseIdValue] = useState(""); // State for case id input
   const [qrMessage, setQrMessage] = useState("");
@@ -250,4 +250,4 @@ const GoodReceive = () => {
   );
 };
 
-export default GoodReceive;
+export default GoodReceiveComp;

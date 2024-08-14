@@ -1,5 +1,4 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import {
   Bell,
   CircleUser,
@@ -10,7 +9,6 @@ import {
   ScanBarcode,
   TextCursorInput,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -23,7 +21,7 @@ import {
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
-export function Dashboard() {
+function Dashboard({ children }) {
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       {/* <div className="hidden max-h-full border-r bg-muted/40 md:block"> */}
@@ -152,9 +150,11 @@ export function Dashboard() {
           </DropdownMenu>
         </header>
         <main className=" flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-          <Outlet />
+          {children}
         </main>
       </div>
     </div>
-  );
-}
+    );
+  }
+  
+  export default Dashboard;
